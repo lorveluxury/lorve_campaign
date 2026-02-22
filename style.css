@@ -58,13 +58,49 @@ body {
   font-weight: 500;
 }
 
-.btn-primary {
-  background: var(--gold);
-  color: white;
-  padding: 10px 24px;
+.btn-primary,
+.btn-white {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
   border-radius: 40px;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+/* PRIMARY GOLD */
+.btn-primary {
+  background: #C79663;
+  color: white;
+  padding: 12px 28px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* WHITE HERO BUTTON */
+.btn-white {
+  background: white;
+  color: #111;
+  padding: 14px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-white:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* CLICK PRESS EFFECT */
+.btn-primary:active,
+.btn-white:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 }
 
 /* HERO */
@@ -85,13 +121,49 @@ body {
   margin-bottom: 25px;
 }
 
+.btn-primary,
+.btn-white {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+/* PRIMARY GOLD */
+.btn-primary {
+  background: #C79663;
+  color: white;
+  padding: 12px 28px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* WHITE HERO BUTTON */
 .btn-white {
   background: white;
-  color: black;
-  padding: 14px 28px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 600;
+  color: #111;
+  padding: 14px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-white:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* CLICK PRESS EFFECT */
+.btn-primary:active,
+.btn-white:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 }
 
 /* SERVICES */
@@ -182,4 +254,26 @@ body {
 .nav-links a.active {
   font-weight: 600;
   color: #C79663;
+}
+.btn-primary::before,
+.btn-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+}
+
+.btn-primary:hover::before,
+.btn-white:hover::before {
+  left: 125%;
 }
