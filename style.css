@@ -1,6 +1,7 @@
 :root {
   --gold: #C79663;
-  --dark: #111;
+  --dark: #111111;
+  --light: #f5f5f5;
 }
 
 * {
@@ -17,16 +18,20 @@ body {
   font-family: 'Archivo', sans-serif;
   background: var(--gold);
   color: var(--dark);
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
   background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  padding: 20px 0;
+  backdrop-filter: blur(12px);
+  padding: 18px 0;
   z-index: 1000;
 }
 
@@ -56,22 +61,28 @@ body {
   text-decoration: none;
   color: var(--dark);
   font-weight: 500;
+  transition: 0.3s ease;
 }
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn-primary,
 .btn-white {
   display: inline-block;
-  position: relative;
-  overflow: hidden;
   border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.35s ease;
 }
 
-/* PRIMARY GOLD */
 .btn-primary {
-  background: #C79663;
+  background: var(--gold);
   color: white;
   padding: 12px 28px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
@@ -82,10 +93,13 @@ body {
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-/* WHITE HERO BUTTON */
+.btn-primary:active {
+  transform: translateY(0px);
+}
+
 .btn-white {
   background: white;
-  color: #111;
+  color: var(--dark);
   padding: 14px 30px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
@@ -95,78 +109,36 @@ body {
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-/* CLICK PRESS EFFECT */
-.btn-primary:active,
 .btn-white:active {
   transform: translateY(0px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero {
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url("Interior Sprinter_2.png") center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("Interior Sprinter_2.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 20px;
 }
 
-.hero h1 {
+.hero-content h1 {
   font-family: 'Quicksand', sans-serif;
-  font-size: 52px;
+  font-size: 56px;
   color: white;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-.btn-primary,
-.btn-white {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  border-radius: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.35s ease;
-}
+/* =========================
+   SERVICES
+========================= */
 
-/* PRIMARY GOLD */
-.btn-primary {
-  background: #C79663;
-  color: white;
-  padding: 12px 28px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
-
-/* WHITE HERO BUTTON */
-.btn-white {
-  background: white;
-  color: #111;
-  padding: 14px 30px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.btn-white:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
-
-/* CLICK PRESS EFFECT */
-.btn-primary:active,
-.btn-white:active {
-  transform: translateY(0px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-}
-
-/* SERVICES */
 .services {
   padding: 100px 0 60px;
 }
@@ -177,7 +149,19 @@ body {
   gap: 60px;
 }
 
-/* FLEET */
+.services h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 34px;
+}
+
+.services p {
+  line-height: 1.6;
+}
+
+/* =========================
+   FLEET
+========================= */
+
 .fleet {
   padding: 60px 0 100px;
   display: flex;
@@ -186,17 +170,26 @@ body {
 }
 
 .fleet-card {
-  background: #f2f2f2;
-  border-radius: 30px;
-  padding: 50px;
+    background: var(--light);
+  border-radius: 28px;
+  padding: 35px 45px;
   display: flex;
   align-items: center;
   gap: 50px;
   position: relative;
+  transition: 0.4s ease;
+  max-width: 950px;
+  margin: 0 auto; 
+}
+
+.fleet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
 .fleet-card img {
-  width: 380px;
+  width: 350px;
+  max-width: 100%;
 }
 
 .seat-badge {
@@ -208,6 +201,10 @@ body {
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 14px;
+}
+
+.fleet-info h3 {
+  font-weight: 400;
 }
 
 .fleet-info h2 {
@@ -230,10 +227,17 @@ body {
   color: #777;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
+
 .contact {
   padding: 100px 0;
   text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Quicksand', sans-serif;
 }
 
 .contact-icons {
@@ -251,29 +255,28 @@ body {
 .contact-icons img:hover {
   transform: translateY(-4px);
 }
-.nav-links a.active {
-  font-weight: 600;
-  color: #C79663;
-}
-.btn-primary::before,
-.btn-white::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.6) 50%,
-    rgba(255,255,255,0) 100%
-  );
-  transform: skewX(-25deg);
-  transition: 0.75s;
-}
 
-.btn-primary:hover::before,
-.btn-white:hover::before {
-  left: 125%;
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .fleet-card img {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
 }
