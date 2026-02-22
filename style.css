@@ -179,3 +179,7 @@ body {
 .contact-icons img:hover {
   transform: translateY(-4px);
 }
+.nav-links a.active {
+  font-weight: 600;
+  color: #C79663;
+}
