@@ -375,3 +375,16 @@ body {
 .promo-btn:hover::before {
   left: 130%;
 }
+.hero-cta {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    position: static;
+    transform: none;
+    margin-top: 16px;
+  }
+}
