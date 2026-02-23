@@ -4,6 +4,10 @@
   --light: #f5f5f5;
 }
 
+/* =========================
+   RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +26,16 @@ body {
 }
 
 /* =========================
+   LAYOUT
+========================= */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
    NAVBAR
 ========================= */
 
@@ -33,12 +47,6 @@ body {
   backdrop-filter: blur(12px);
   padding: 18px 0;
   z-index: 1000;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
 }
 
 .nav-wrapper {
@@ -69,7 +77,7 @@ body {
 }
 
 /* =========================
-   BUTTONS
+   BUTTONS GLOBAL
 ========================= */
 
 .btn-primary,
@@ -78,7 +86,7 @@ body {
   border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.35s ease;
+  transition: 0.35s ease;
 }
 
 .btn-primary {
@@ -93,10 +101,6 @@ body {
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-.btn-primary:active {
-  transform: translateY(0px);
-}
-
 .btn-white {
   background: white;
   color: var(--dark);
@@ -109,19 +113,15 @@ body {
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-.btn-white:active {
-  transform: translateY(0px);
-}
-
 /* =========================
    HERO
 ========================= */
 
 .hero {
-  height: 75vh; 
+  height: 75vh;
   min-height: 500px;
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-              url("Interior Sprinter_2.png") center center / cover no-repeat;
+              url("Interior Sprinter_2.png") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,28 +132,60 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-size: 56px;
   color: white;
-  margin-bottom: 30px;
 }
+.hero-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 17px;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
 /* =========================
-   PROMO BANNER 3:1
+   PROMO BANNER CLICKABLE
 ========================= */
 
 .promo-banner {
-  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 60px 0;
+  margin: 40px 0 70px;
 }
 
-.promo-banner img {
-  width: 90%;
-  max-width: 1200px;
-  aspect-ratio: 3 / 1;   /* Rasio 3:1 */
-  object-fit: cover;
+.promo-content {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  overflow: hidden;
   border-radius: 20px;
   display: block;
+  cursor: pointer;
 }
 
+.promo-content img {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* Subtle zoom */
+
+.promo-content:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.4s ease;
+}
+
+.promo-content:hover .promo-overlay {
+  background: rgba(0,0,0,0.35);
+}
 /* =========================
    SERVICES
 ========================= */
@@ -189,16 +221,16 @@ body {
 }
 
 .fleet-card {
-    background: var(--light);
+  background: var(--light);
   border-radius: 28px;
   padding: 35px 45px;
   display: flex;
   align-items: center;
   gap: 50px;
-  position: relative;
-  transition: 0.4s ease;
   max-width: 950px;
-  margin: 0 auto; 
+  margin: 0 auto;
+  transition: 0.4s ease;
+  position: relative;
 }
 
 .fleet-card:hover {
@@ -220,10 +252,6 @@ body {
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 14px;
-}
-
-.fleet-info h3 {
-  font-weight: 400;
 }
 
 .fleet-info h2 {
@@ -255,13 +283,10 @@ body {
   text-align: center;
 }
 
-.contact h2 {
-  font-family: 'Quicksand', sans-serif;
-}
-
 .contact-icons {
   margin-top: 30px;
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 50px;
 }
@@ -274,12 +299,7 @@ body {
 .contact-icons img:hover {
   transform: translateY(-4px);
 }
-.contact-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -304,91 +324,61 @@ body {
   }
 
 }
-/* =========================
-   PROMO BANNER
-========================= */
-
-.promo-banner {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0 60px;
-}
-
-.promo-content {
-  position: relative;
-  width: 90%;
-  max-width: 1200px;
-}
-
-.promo-content img {
-  width: 100%;
-  aspect-ratio: 3 / 1;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
-}
-
-/* BUTTON PUTIH TENGAH */
-
-.promo-btn {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  color: #111;
-  padding: 14px 34px;
-  border-radius: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: all 0.35s ease;
-}
-
-/* Hover Lift */
-
-.promo-btn:hover {
-  transform: translateX(-50%) translateY(-4px);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
-}
-.promo-btn:hover::before {
-  left: 130%;
-}
-.hero-cta {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-  .hero-cta {
-    position: static;
-    transform: none;
-    margin-top: 16px;
-  }
-}
-/* =========================
-   MOBILE FIX
-========================= */
 
 @media (max-width: 768px) {
 
   .promo-btn {
     position: static;
     transform: none;
-    margin: 16px auto 0;
+    margin: 20px auto 0;
+    display: block;
     width: 90%;
     text-align: center;
   }
 
-}
-@media (max-width: 768px) {
-
-  .promo-btn:hover,
-  .promo-btn:active,
-  .promo-btn:focus {
+  .promo-btn:hover {
     transform: none;
   }
 
+}
+.fleet-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.fleet-header h2 {
+  font-family: 'Quicksand';
+  font-size: 36px;
+  margin-bottom: 10px; 
+}
+
+.fleet-header p {
+  color: rgba(17,17,17,0.6);
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-links a.active {
+  color: var(--gold);
+  font-weight: 600;
 }
