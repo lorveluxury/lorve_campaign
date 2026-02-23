@@ -403,3 +403,12 @@ body {
   }
 
 }
+@media (max-width: 768px) {
+
+  .promo-btn:hover,
+  .promo-btn:active,
+  .promo-btn:focus {
+    transform: none;
+  }
+
+}
