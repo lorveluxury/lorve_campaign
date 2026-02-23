@@ -266,6 +266,8 @@ body {
 .current {
   font-size: 30px;
   font-weight: 600;
+  color: var(--gold);
+  text-shadow: 0 2px 8px rgba(199,150,99,0.25);
 }
 
 .old {
