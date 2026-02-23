@@ -1,114 +1,384 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lorvé Luxury</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
+  --gold: #C79663;
+  --dark: #111111;
+  --light: #f5f5f5;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* =========================
+   RESET
+========================= */
 
-<header class="navbar">
-  <div class="container nav-wrapper">
-    <img src="Asset 1@3x.png" class="logo" alt="Lorve">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#promo">Campaign</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#fleet">Fleet</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+html {
+  scroll-behavior: smooth;
+}
 
-    <a href="https://example.com/download-app" class="btn-primary" target="_blank">
-      Download App
-    </a>
-  </div>
-</header>
-<section id="campaign" class="hero">
-  <div class="hero-content">
-    <h1>Luxury Beyond the Journey</h1>
-  </div>
-</section>
-<section id="promo" class="promo-banner">
-  <div class="promo-content">
-    <img src="promo banner.png" alt="Promo Mudik 2026">
+body {
+  font-family: 'Archivo', sans-serif;
+  background: var(--gold);
+  color: var(--dark);
+  overflow-x: hidden;
+}
 
-    <a href="https://wa.me/6281188050888?text=Halo%20Lorv%C3%A9,%0A%0ASaya%20ingin%20mengamankan%20unit%20untuk%20Promo%20Mudik%202026.%0A%0AMohon%20informasinya.%0A%0ATerima%20kasih."
-       target="_blank"
-       class="btn-primary promo-btn">
-      Get Yours
-    </a>
-  </div>
-</section>
-<section id="services" class="services container">
-  <div class="services-grid">
-    <h2>Our Services</h2>
-    <p>
-      Service excellence, luxury products, and technology are at the heart of Lorvé.
-      We pioneer refined mobility experiences for those who value discretion and comfort.
-    </p>
-  </div>
-</section>
+/* =========================
+   LAYOUT
+========================= */
 
-<section id="fleet" class="fleet container">
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
 
-  <div class="fleet-card">
-    <span class="seat-badge">8 Seat</span>
-    <img src="FRONT SIDE shadow sprinter.png" alt="Sprinter">
-    <div class="fleet-info">
-      <h3>Mercedes-Benz</h3>
-      <h2>Sprinter</h2>
-      <div class="price">
-        <span class="current">Rp8.000.000</span>
-        <span class="old">Rp15.000.000</span>
-      </div>
-        <a href="https://wa.me/6281188050888?text=Halo%20Lorv%C3%A9,%0A%0ASaya%20tertarik%20dengan%20Promo%20Mudik%202026%20untuk%20Mercedes-Benz%20Sprinter.%0AMohon%20informasi%20dan%20ketersediaan%20untuk:%0A%0A%E2%80%A2%20Tanggal%20keberangkatan:%0A%E2%80%A2%20Kota%20asal:%0A%E2%80%A2%20Kota%20tujuan:%0A%E2%80%A2%20Jumlah%20penumpang:%0A%0ATerima%20kasih." target="_blank" class="btn-primary">
-             Book Now
-        </a>
-    </div>
-  </div>
+/* =========================
+   NAVBAR
+========================= */
 
-  <div class="fleet-card">
-    <span class="seat-badge">7 Seat</span>
-    <img src="FRONT SIDE shadow.png" alt="Hiace">
-    <div class="fleet-info">
-      <h3>Toyota</h3>
-      <h2>Hiace Premio</h2>
-      <div class="price">
-        <span class="current">Rp5.000.000</span>
-        <span class="old">Rp8.000.000</span>
-      </div>
-      <a href="https://wa.me/6281188050888?text=Halo%20Lorv%C3%A9,%0A%0ASaya%20tertarik%20dengan%20Promo%20Mudik%202026%20untuk%20Toyota%20Hiace%20Premio.%0AMohon%20informasi%20dan%20ketersediaan%20untuk:%0A%0A%E2%80%A2%20Tanggal%20keberangkatan:%0A%E2%80%A2%20Kota%20asal:%0A%E2%80%A2%20Kota%20tujuan:%0A%E2%80%A2%20Jumlah%20penumpang:%0A%0ATerima%20kasih." target="_blank" class="btn-primary">
-             Book Now
-        </a>
-    </div>
-  </div>
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  padding: 18px 0;
+  z-index: 1000;
+}
 
-</section>
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
+.logo {
+  height: 45px;
+}
 
-  <div class="contact-icons">
-    <a href="https://wa.me/6281188050888" target="_blank">
-      <img src="wa.svg" alt="WhatsApp">
-    </a>
-    <a href="https://lorve.id" target="_blank">
-      <img src="web.svg" alt="Website">
-    </a>
-    <a href="https://instagram.com/lorve.id" target="_blank">
-      <img src="ig.svg" alt="Instagram">
-    </a>
-    <a href="mailto:marcomm@lorve.id">
-      <img src="email.svg" alt="Email">
-    </a>
-  </div>
-</section>
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* =========================
+   BUTTONS GLOBAL
+========================= */
+
+.btn-primary,
+.btn-white {
+  display: inline-block;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.35s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: white;
+  padding: 12px 28px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.btn-white {
+  background: white;
+  color: var(--dark);
+  padding: 14px 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-white:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  height: 75vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("Interior Sprinter_2.png") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 56px;
+  color: white;
+}
+.hero-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 17px;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   PROMO BANNER CLICKABLE
+========================= */
+
+.promo-banner {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 70px;
+}
+
+.promo-content {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  overflow: hidden;
+  border-radius: 20px;
+  display: block;
+  cursor: pointer;
+}
+
+.promo-content img {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* Subtle zoom */
+
+.promo-content:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.4s ease;
+}
+
+.promo-content:hover .promo-overlay {
+  background: rgba(0,0,0,0.35);
+}
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+  padding: 100px 0 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.services h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 34px;
+}
+
+.services p {
+  line-height: 1.6;
+}
+
+/* =========================
+   FLEET
+========================= */
+
+.fleet {
+  padding: 60px 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.fleet-card {
+  background: var(--light);
+  border-radius: 28px;
+  padding: 35px 45px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 950px;
+  margin: 0 auto;
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.fleet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.fleet-card img {
+  width: 350px;
+  max-width: 100%;
+}
+
+.seat-badge {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: black;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.fleet-info h2 {
+  font-size: 38px;
+  margin: 10px 0 20px;
+}
+
+.price {
+  margin-bottom: 20px;
+}
+
+.current {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.old {
+  text-decoration: line-through;
+  margin-left: 12px;
+  color: #777;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.contact-icons {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.contact-icons img {
+  width: 28px;
+  transition: 0.3s ease;
+}
+
+.contact-icons img:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .fleet-card img {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .promo-btn {
+    position: static;
+    transform: none;
+    margin: 20px auto 0;
+    display: block;
+    width: 90%;
+    text-align: center;
+  }
+
+  .promo-btn:hover {
+    transform: none;
+  }
+
+}
+.fleet-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.fleet-header h2 {
+  font-family: 'Quicksand';
+  font-size: 36px;
+  margin-bottom: 10px; 
+}
+
+.fleet-header p {
+  color: rgba(17,17,17,0.6);
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-links a.active {
+  color: var(--gold);
+  font-weight: 600;
+}
