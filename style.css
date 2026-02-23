@@ -388,3 +388,18 @@ body {
     margin-top: 16px;
   }
 }
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+  .promo-btn {
+    position: static;
+    transform: none;
+    margin: 16px auto 0;
+    width: 90%;
+    text-align: center;
+  }
+
+}
