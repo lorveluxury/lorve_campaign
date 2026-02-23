@@ -118,14 +118,14 @@ body {
 ========================= */
 
 .hero {
-  min-height: 100vh;
+  height: 75vh; 
+  min-height: 500px;
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
               url("Interior Sprinter_2.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -133,6 +133,25 @@ body {
   font-size: 56px;
   color: white;
   margin-bottom: 30px;
+}
+/* =========================
+   PROMO BANNER 3:1
+========================= */
+
+.promo-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.promo-banner img {
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 3 / 1;   /* Rasio 3:1 */
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
 }
 
 /* =========================
@@ -255,7 +274,12 @@ body {
 .contact-icons img:hover {
   transform: translateY(-4px);
 }
-
+.contact-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
 /* =========================
    RESPONSIVE
 ========================= */
@@ -279,4 +303,75 @@ body {
     display: none;
   }
 
+}
+/* =========================
+   PROMO BANNER
+========================= */
+
+.promo-banner {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 60px;
+}
+
+.promo-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.promo-content img {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* BUTTON PUTIH TENGAH */
+
+.promo-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #111;
+  padding: 14px 34px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Hover Lift */
+
+.promo-btn:hover {
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+}
+
+/* Efek Kilau */
+
+.promo-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.8s;
+}
+
+.promo-btn:hover::before {
+  left: 130%;
 }
